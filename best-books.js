@@ -16,6 +16,10 @@ formEl.addEventListener('submit', function(e) {
   fetch(URL).then((result) => {
     return result.json()
   }).then((data) => {
-    console.log(data)
+    const books = data.results.books
+
+    books.forEach((book) => {
+      console.log(book.title, book.author, book.description)
+    });
   })
 });
